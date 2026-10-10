@@ -1,60 +1,46 @@
-console.log("script running...")
-document.querySelector(".cross").style.display ="none"; 
-document.querySelector(".hamburger").addEventListener("click",()=>{
-    document.querySelector(".sidebar").classList.toggle("sidebarGo");
-    if(document.querySelector(".sidebar").classList.contains("sidebarGo")){
-        document.querySelector(".ham").style.display = "inline"
-        document.querySelector(".cross").style.display = "none"
-    }    
-    else{
-        document.querySelector(".ham").style.display = "none" 
-        setTimeout(() => {
-            document.querySelector(".cross").style.display = "inline"
-        },300);
-    }console.log("script running...");
- 
-const hamburger = document.getElementById("hamburger");
-const sidebar = document.getElementById("sidebar");
-const overlay = document.getElementById("overlay");
- 
-function openSidebar() {
-    sidebar.classList.add("sidebar-open");
-    hamburger.classList.add("sidebar-open");
-    overlay.classList.add("show");
-    hamburger.setAttribute("aria-expanded", "true");
+```javascript
+const menuToggle = document.querySelector("#menuToggle");
+const sidebar = document.querySelector("#sidebar");
+const overlay = document.querySelector("#overlay");
+
+function toggleMenu() {
+    const isOpen = sidebar.classList.toggle("sidebar-open");
+
+    menuToggle.classList.toggle("is-open", isOpen);
+    overlay.classList.toggle("show", isOpen);
+
+    menuToggle.setAttribute("aria-expanded", isOpen);
+    menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
+    );
 }
- 
-function closeSidebar() {
-    sidebar.classList.remove("sidebar-open");
-    hamburger.classList.remove("sidebar-open");
-    overlay.classList.remove("show");
-    hamburger.setAttribute("aria-expanded", "false");
-}
- 
-hamburger.addEventListener("click", () => {
-    if (sidebar.classList.contains("sidebar-open")) {
-        closeSidebar();
-    } else {
-        openSidebar();
-    }
-});
- 
-overlay.addEventListener("click", closeSidebar);
- 
-// Close the drawer automatically if the viewport grows back to desktop size
-window.addEventListener("resize", () => {
-    if (window.innerWidth > 880) {
-        closeSidebar();
-    }
-});
- 
-// Close drawer when a nav link is tapped (mobile)
-document.querySelectorAll(".sidebar nav a").forEach((link) => {
+
+menuToggle.addEventListener("click", toggleMenu);
+
+overlay.addEventListener("click", toggleMenu);
+
+// Close menu when a navigation link is selected
+sidebar.querySelectorAll("nav a").forEach((link) => {
     link.addEventListener("click", () => {
-        if (window.innerWidth <= 880) {
-            closeSidebar();
-        }
+        sidebar.classList.remove("sidebar-open");
+        menuToggle.classList.remove("is-open");
+        overlay.classList.remove("show");
+
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation menu");
     });
 });
- 
-}) 
+
+// Close menu with Escape key
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+        sidebar.classList.remove("sidebar-open");
+        menuToggle.classList.remove("is-open");
+        overlay.classList.remove("show");
+
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation menu");
+    }
+});
+```
