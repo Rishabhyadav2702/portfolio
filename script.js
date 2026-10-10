@@ -1,4 +1,4 @@
-```javascript
+
 const menuToggle = document.querySelector("#menuToggle");
 const sidebar = document.querySelector("#sidebar");
 const overlay = document.querySelector("#overlay");
@@ -43,4 +43,3 @@ document.addEventListener("keydown", (event) => {
         menuToggle.setAttribute("aria-label", "Open navigation menu");
     }
 });
-```
