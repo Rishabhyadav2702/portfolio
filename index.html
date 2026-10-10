@@ -1,52 +1,200 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rishabh yadav -Web developer,programmer</title>
+
+    <meta name="description"
+        content="Rishabh Yadav — aspiring web developer from Prayagraj, India. Explore my skills, projects and portfolio.">
+
+    <title>Rishabh Yadav | Web Developer</title>
+
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+
     <div class="container">
-        <div class="sidebar sidebarGo">
+
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+
+            <a href="index.html" class="brand">
+                R<span class="accent-dot">.</span>
+            </a>
+
             <nav>
                 <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/Intro.html">My Intro</a></li>
-                    <li><a href="/Services.html">Services</a></li>
-                    <li><a href="/blog.html">Blog</a></li>
-                    <li><a href="/contact.html">contact me</a></li>
-
+                    <li><a class="active" href="index.html">Home</a></li>
+                    <li><a href="Intro.html">My Intro</a></li>
+                    <li><a href="Services.html">Services</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact Me</a></li>
                 </ul>
             </nav>
-        </div>
-        <div class="main">
-            <div class="hamburger">
-                <img class="ham" src="ham.png" alt="" width="23">
-                <img class="cross" src="cross.png" alt="" width="23">
+
+            <div class="sidebar-footer">
+                <span class="status-dot"></span>
+                Available for learning & projects
             </div>
-            <div class="infocontainer">
+
+        </aside>
+
+        <!-- Mobile overlay -->
+        <div class="overlay" id="overlay"></div>
+
+        <!-- Main Content -->
+        <main class="main">
+
+            <button class="hamburger" id="menuToggle"
+                aria-label="Open navigation menu"
+                aria-controls="sidebar"
+                aria-expanded="false">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+            <section class="infocontainer">
+
+                <!-- Introduction -->
                 <div class="devinfo">
-                    <div class="Hello"> Hi I am </div>
-                    <div class="name"> Rishabh </div>
-                    <div class="about">developer,Entrepreneur, </div>
-                    <div class="moreabout">Hi I am a developer. I live in Prayagraj.
-                    </div>
+
+                    <p class="eyebrow">
+                        <span class="status-dot"></span>
+                        ASPIRING WEB DEVELOPER
+                    </p>
+
+                    <p class="hello">Hi, I'm</p>
+
+                    <h1 class="name">
+                        Rishabh<span class="accent-dot">.</span>
+                    </h1>
+
+                    <h2 class="about">
+                        I build things for the web.
+                    </h2>
+
+                    <p class="moreabout">
+                        I'm a Computer Science student from Prayagraj,
+                        passionate about web development and creating
+                        useful digital experiences. Currently learning,
+                        building projects, and improving my skills.
+                    </p>
+
                     <div class="buttons">
-                        <a href="/cv.txt" target="_blank">
-                            <button class="btn">Downlode Cv</button></a>
-                        <a href="/contact.html"><button class="btn">contact Me</button></a>
+
+                        <a href="contact.html" class="btn btn-primary">
+                            Let's Connect <span>↗</span>
+                        </a>
+
+                        <a href="cv.txt" class="btn btn-ghost"
+                            target="_blank" rel="noopener">
+                            View My CV
+                        </a>
 
                     </div>
-                </div>
-                <!-- <div class="rishabhpic"><img src="rishabh (2).png" alt="rishabh Yadav"> -->
-                    <!-- <div class="DSCpic"><img src="DSC_9738.JPG" alt="Rishabh Yadav"></div> -->
-                </div>
-            </div>
-        </div>
-        <script src="script.js"></script>
-</body>
 
+                    <div class="social-note">
+                        <span>01</span>
+                        Student
+                        <span class="separator">/</span>
+                        Web Development
+                        <span class="separator">/</span>
+                        Always Learning
+                    </div>
+
+                </div>
+
+                <!-- Developer Terminal -->
+                <div class="terminal-card">
+
+                    <div class="terminal-bar">
+                        <span class="tdot red"></span>
+                        <span class="tdot yellow"></span>
+                        <span class="tdot green"></span>
+
+                        <span class="tname">rishabh.js</span>
+                    </div>
+
+                    <div class="terminal-body">
+
+                        <p>
+                            <span class="code-purple">const</span>
+                            developer = {
+                        </p>
+
+                        <div class="code-indent">
+                            <p>
+                                name:
+                                <span class="code-green">
+                                    "Rishabh Yadav"
+                                </span>,
+                            </p>
+
+                            <p>
+                                location:
+                                <span class="code-green">
+                                    "Prayagraj, India"
+                                </span>,
+                            </p>
+
+                            <p>
+                                role:
+                                <span class="code-green">
+                                    "CS Student"
+                                </span>,
+                            </p>
+
+                            <p>
+                                learning:
+                                <span class="code-green">
+                                    ["HTML", "CSS", "JavaScript", "React"]
+                                </span>,
+                            </p>
+
+                            <p>
+                                goal:
+                                <span class="code-green">
+                                    "Full-Stack Developer"
+                                </span>
+                            </p>
+                        </div>
+
+                        <p>}</p>
+
+                        <div class="terminal-divider"></div>
+
+                        <p>
+                            <span class="code-muted">// The journey continues...</span>
+                        </p>
+
+                        <p class="terminal-success">
+                            <span class="status-dot"></span>
+                            Ready to build something great.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <footer class="page-footer">
+                <p>Designed & built by Rishabh Yadav</p>
+                <p>© 2026 · Keep learning. Keep building.</p>
+            </footer>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
 </html>
+```
